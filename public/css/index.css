@@ -93,6 +93,15 @@ button {
   height: 2.5rem;
   text-align: center;
 }
+.wiki-container {
+  opacity: 0.5;
+  font-weight: 400;
+}
+.wiki-link {
+  opacity: inherit;
+  color: inherit;
+  font-weight: 700;
+}
 
 /* Used to test the counter for the buttons */
 .test {
