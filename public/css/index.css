@@ -112,104 +112,6 @@ button {
   height: 2.5rem;
   text-align: center;
 }
-.wiki-container {
-  opacity: 0.5;
-  font-weight: 400;
-}
-.wiki-link {
-  opacity: inherit;
-  color: inherit;
-  font-weight: 700;
-}
-nav {
-  min-height: 4.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: space-between;
-}
-nav a {
-  font-size: 0.55rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.75;
-}
-nav a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  border-top: 2px solid transparent;
-  z-index: -1;
-}
-nav a:hover {
-  opacity: 1;
-}
-nav a:hover::before {
-  border-color: red;
-}
-ul {
-  list-style: none;
-}
-
-.flex-menu {
-  display: flex;
-}
-.body-padding {
-  padding-inline: 1.6rem;
-}
-.fill-height {
-  height: 100%;
-}
-
-ul.flex-menu {
-  padding-left: 0.75rem;
-  padding-right: 0.45rem;
-  margin: 0;
-  justify-content: space-between;
-  align-items: center;
-}
-ul.flex-menu > li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* border-top: 2px solid red;
-  border-bottom: 2px solid transparent; */
-}
-
-.logo {
-  font-size: 1.4rem;
-  line-height: normal;
-  font-weight: 400;
-  letter-spacing: -1.5px;
-  text-transform: uppercase;
-}
-
-/* Used to test the counter for the buttons */
-.planet-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  counter-reset: count 0;
-}
-.planet-menu button {
-  counter-increment: count 1;
-}
-.planet-menu button::before {
-  content: '0' counter(count, decimal);
-  margin-inline: 1rem;
-  opacity: 0.5;
-}
-/* End test */
-
 button.btn-medium:hover,
 button.btn-large:hover {
   background-color: var(--dark-gray);
@@ -229,3 +131,98 @@ button.btn-small:hover {
   border: none;
   border-bottom: 2px solid var(--earth-purple);
 }
+
+/* Utility classes */
+.body-padding {
+  padding-inline: 1.6rem;
+}
+.fill-height {
+  height: 100%;
+}
+
+/* Component level styles */
+nav {
+  min-height: 4.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+#planets-primary-nav {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  padding-left: 0.75rem;
+  padding-right: 0.45rem;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+#planets-primary-nav li {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#planets-primary-nav a {
+  font-size: 0.55rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.75;
+}
+#planets-primary-nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-top: 2px solid transparent;
+  z-index: -1;
+}
+#planets-primary-nav a:hover {
+  opacity: 1;
+}
+#planets-primary-nav a:hover::before {
+  border-color: red;
+}
+
+/* Element level styles */
+.logo {
+  font-size: 1.4rem;
+  line-height: normal;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+.wiki-container {
+  opacity: 0.5;
+  font-weight: 400;
+}
+.wiki-link {
+  opacity: inherit;
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Used to test the counter for the buttons */
+.planet-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  counter-reset: count 0;
+}
+.planet-menu button {
+  counter-increment: count 1;
+}
+.planet-menu button::before {
+  content: '0' counter(count, decimal);
+  margin-inline: 1rem;
+  opacity: 0.5;
+}
+/* End test */
