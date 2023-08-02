@@ -111,6 +111,14 @@ h4 {
   text-transform: uppercase;
 }
 button {
+  font-family: 'Spartan', sans-serif;
+  font-size: 0.55rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  opacity: 0.85;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: inline;
   background-color: transparent;
   color: inherit;
   text-align: left;
