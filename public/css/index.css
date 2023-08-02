@@ -118,17 +118,16 @@ button {
 .btn-large {
   width: 17.5rem;
   height: 2.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .btn-medium {
   width: 14.05rem;
   height: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .btn-small {
   width: 4rem;
   height: 2.5rem;
   text-align: center;
+  border: none;
 }
 button.btn-medium:hover,
 button.btn-large:hover {
@@ -136,8 +135,8 @@ button.btn-large:hover {
   border: 1px solid var(--dark-gray);
 }
 button.active {
-  background-color: var(--earth-purple);
-  border: 1px solid var(--earth-purple);
+  background-color: var(--jupiter-red);
+  border: 1px solid var(--jupiter-red);
 }
 button.btn-small.active {
   background-color: transparent;
@@ -162,6 +161,9 @@ button.btn-small:hover {
 }
 .nav-bottom-margin {
   margin-bottom: 3.6rem;
+}
+.border-gray-02 {
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Component level styles */
@@ -217,7 +219,8 @@ nav {
 }
 
 /* MAIN */
-main {
+main,
+footer {
   width: min(55.5rem, 100%);
   margin: auto;
 }
@@ -268,6 +271,24 @@ main .grid-container {
   opacity: 0.5;
 }
 
+/* Footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.fact-card {
+  padding-top: 1rem;
+  padding-bottom: 1.35rem;
+  padding-left: 1.15rem;
+}
+.fact-title {
+  opacity: 0.5;
+}
+.fact-content {
+  text-transform: uppercase;
+}
+
 /* Element level styles */
 .logo {
   font-family: 'Antonio', sans-serif;
@@ -278,11 +299,25 @@ main .grid-container {
   text-transform: uppercase;
 }
 .wiki-container {
-  opacity: 0.5;
   font-weight: 400;
+  padding-bottom: 0.12rem;
+}
+.wiki-container p {
+  opacity: 0.5;
+  display: inline;
 }
 .wiki-link {
-  opacity: inherit;
+  opacity: 0.55;
   color: inherit;
-  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+  margin-left: 0.17rem;
+  padding-bottom: 0.5rem;
+}
+.wiki-link::after {
+  content: url('../images/icon-source.svg');
+  opacity: 1;
+  margin-left: 0.45rem;
+  padding-bottom: 0.5rem;
 }
