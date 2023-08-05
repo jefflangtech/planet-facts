@@ -84,6 +84,16 @@ body {
   left: 0;
   z-index: 100;
   opacity: 0.4;
+  display: none;
+}
+#mobile-overlay {
+  position: absolute;
+  width: 375px;
+  height: 950px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 1;
 }
 /* End testing */
 
@@ -168,11 +178,13 @@ button.active {
 /* Component level styles */
 /* NAV */
 nav {
+  position: relative;
   min-height: 4.25rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  /* overflow-y: hidden; */
 }
 #planets-primary-nav {
   height: 100%;
@@ -203,6 +215,12 @@ nav {
 }
 #planets-primary-nav a:hover {
   opacity: 1;
+}
+#menu-hamburger-icon {
+  display: none;
+}
+.mobile-menu-circle {
+  display: none;
 }
 
 /* MAIN */
@@ -433,9 +451,6 @@ footer {
 }
 
 @media (max-width: 660px) {
-  /* .component-content {
-    overflow: hidden;
-  } */
   .body-padding {
     padding-inline: 1.2rem;
   }
@@ -448,6 +463,9 @@ footer {
   footer {
     padding-inline: 1.2rem;
   }
+  .hero-content {
+    margin-bottom: 0;
+  }
   h1 {
     font-size: 2rem;
   }
@@ -458,6 +476,7 @@ footer {
     display: inline;
     width: 4rem;
     height: 2.5rem;
+    line-height: normal;
     text-align: center;
     border: none;
   }
@@ -479,6 +498,72 @@ footer {
     margin-right: 0;
     opacity: 0;
   }
+  nav {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    min-height: 3.45rem;
+  }
+  .logo {
+    margin: 0;
+    text-align: left;
+  }
+  /* To style the mobile menu */
+  #drawer-menu {
+    position: absolute;
+    top: 3.45rem;
+    left: 0;
+    right: 0;
+    height: 100%;
+    height: 100dvh;
+    z-index: 999;
+    transform: translateX(100%);
+    background-color: var(--night-blue);
+  }
+  body > div.component-content {
+    position: relative;
+    z-index: 1;
+  }
+  #planets-primary-nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-inline: 1.2rem;
+    margin-top: 1.2rem;
+  }
+  #planets-primary-nav li {
+    height: unset;
+    width: 100%;
+    padding-block: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #planets-primary-nav li::before {
+    content: '';
+    margin-right: 1.25rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+  #planets-primary-nav li::after {
+    content: url(../images/icon-chevron.svg);
+    display: inline-block;
+    margin-left: auto;
+  }
+  .mobile-menu-circle {
+    display: inline;
+    margin-right: 1.25rem;
+  }
+  #planets-primary-nav a {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+  #menu-hamburger-icon {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+  }
   .nav-bottom-margin {
     margin-bottom: 0;
   }
@@ -487,10 +572,12 @@ footer {
     grid-template-rows: auto;
   }
   .hero-image {
-    grid-row: 2 / 3;
     grid-column: 1 / 2;
-    width: 100%;
-    height: 20.85rem;
+    grid-row: 2 / 3;
+    height: 13.6rem;
+  }
+  .hero-image > img {
+    max-width: 11.2rem;
   }
   .hero-content {
     text-align: center;
@@ -505,6 +592,7 @@ footer {
     height: 2.5rem;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 0.9rem;
   }
   .planet-menu::after {
     position: absolute;
@@ -517,6 +605,8 @@ footer {
   }
   footer {
     grid-template-columns: 1fr;
+    padding-top: 0.5rem;
+    row-gap: 0.425rem;
   }
   .fact-card {
     display: flex;
@@ -528,5 +618,9 @@ footer {
   .fact-title {
     margin: 0;
     margin-top: 0.3rem;
+  }
+  .fact-content {
+    font-size: 1rem;
+    letter-spacing: -0.75px;
   }
 }
