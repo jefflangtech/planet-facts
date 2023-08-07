@@ -53,6 +53,11 @@ body {
   color: var(--white);
   position: relative;
 }
+.page-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
 /* Overlays for layout testing */
 .overlay {
@@ -174,6 +179,9 @@ button.active {
 .border-gray-02 {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+.opacity-25 {
+  opacity: 0.25;
+}
 
 /* Component level styles */
 /* NAV */
@@ -216,7 +224,7 @@ nav {
 #planets-primary-nav a:hover {
   opacity: 1;
 }
-#menu-hamburger-icon {
+#drawer-menu-toggle {
   display: none;
 }
 .mobile-menu-circle {
@@ -516,8 +524,14 @@ footer {
     height: 100%;
     height: 100dvh;
     z-index: 999;
-    transform: translateX(100%);
     background-color: var(--night-blue);
+  }
+  .menu-closed {
+    transform: translateX(100%);
+    transition: all 0.3s ease-in;
+  }
+  .menu-open {
+    transform: translateX(0%);
   }
   body > div.component-content {
     position: relative;
@@ -559,8 +573,10 @@ footer {
     font-size: 0.75rem;
     line-height: 1.25rem;
   }
-  #menu-hamburger-icon {
+  #drawer-menu-toggle {
     display: block;
+    width: 24px;
+    height: 17px;
     margin-left: auto;
     cursor: pointer;
   }

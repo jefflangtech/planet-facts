@@ -24,83 +24,89 @@
   <meta name="robots" content="index,follow">
 
 </head>
-<body class="component-container">
+<body>
 
-  <div class="overlay">
-    <img id="desktop-overlay" src="overlay-desktop-jupiter.png" alt="overlay for testing">
-    <img id="tablet-overlay" src="overlay-tablet-jupiter.png" alt="overlay for testing">
-    <img id="mobile-overlay" src="overlay-mobile-jupiter.png" alt="overlay for testing">
-  </div>
+  <div class="page-container component-container">
+
+    <div class="overlay">
+      <img id="desktop-overlay" src="overlay-desktop-jupiter.png" alt="overlay for testing">
+      <img id="tablet-overlay" src="overlay-tablet-jupiter.png" alt="overlay for testing">
+      <img id="mobile-overlay" src="overlay-mobile-jupiter.png" alt="overlay for testing">
+    </div>
+    
+    <header>
+      <nav class="body-padding nav-bottom-margin">
+        <div class="logo">the planets</div>
+        <div id="drawer-menu" data-menu-toggle="drawer-menu-toggle" class="component-menu fill-height menu-closed">
+          <ul id="planets-primary-nav" class="">
+            <li class="fill-height">
+              <a href="#mercury">mercury</a></li>
+            <li class="fill-height">
+              <a href="#venus">venus</a></li>
+            <li class="fill-height">             
+              <a href="#earth">earth</a></li>
+            <li class="fill-height">
+              <a href="#mars">mars</a></li>
+            <li class="fill-height">
+              <a href="#jupiter">jupiter</a></li>
+            <li class="fill-height">
+              <a href="#saturn">saturn</a></li>
+            <li class="fill-height">
+              <a href="#uranus">uranus</a></li>
+            <li class="fill-height">
+              <a href="#neptune">neptune</a></li>
+          </ul>
+        </div>
+        <div id="drawer-menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17"><g fill="#FFF" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z"/></g></svg>
+        </div>
+        
+      </nav>
+    </header>
   
-  <header>
-    <nav class="body-padding nav-bottom-margin">
-      <div class="logo">the planets</div>
-      <div id="drawer-menu" class="component-menu fill-height">
-        <ul id="planets-primary-nav" class="">
-          <li class="fill-height">
-            <a href="#mercury">mercury</a></li>
-          <li class="fill-height">
-            <a href="#venus">venus</a></li>
-          <li class="fill-height">             
-            <a href="#earth">earth</a></li>
-          <li class="fill-height">
-            <a href="#mars">mars</a></li>
-          <li class="fill-height">
-            <a href="#jupiter">jupiter</a></li>
-          <li class="fill-height">
-            <a href="#saturn">saturn</a></li>
-          <li class="fill-height">
-            <a href="#uranus">uranus</a></li>
-          <li class="fill-height">
-            <a href="#neptune">neptune</a></li>
-        </ul>
-      </div>
-      <svg id="menu-hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="17"><g fill="#FFF" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z"/></g></svg>
-    </nav>
-  </header>
-
-  <div class="component-content body-padding">
-
-    <main class="component-container">
-      <div class="component-content grid-container m-block-tall">
-        <div class="hero-image">
-          <img src="public/images/planet-jupiter.svg" alt="The planet Jupiter">
+    <div class="component-content body-padding">
+  
+      <main class="component-container">
+        <div class="component-content grid-container m-block-tall">
+          <div class="hero-image">
+            <img src="public/images/planet-jupiter.svg" alt="The planet Jupiter">
+          </div>
+          <div class="hero-content">
+            <h1 class="planet-name">Jupiter</h1>
+            <p class="planet-information">Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass two and a half times that of all the other planets in the Solar System combined, but less than one-thousandth the mass of the Sun.</p>
+            <div class="wiki-container"><p>Source: </p><a class="wiki-link" href="https://en.wikipedia.org/wiki/Jupiter" target="_blank">Wikipedia</a></div>
+          </div>
+          <div class="component-menu planet-menu">
+            <button class="btn border-gray-02 active">overview</button>
+            <button class="btn border-gray-02">internal structure</button>
+            <button class="btn border-gray-02">surface geology</button>
+            <button class="btn-small border-gray-02 active">overview</button>
+            <button class="btn-small border-gray-02">structure</button>
+            <button class="btn-small border-gray-02">surface</button>
+          </div>
         </div>
-        <div class="hero-content">
-          <h1 class="planet-name">Jupiter</h1>
-          <p class="planet-information">Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass two and a half times that of all the other planets in the Solar System combined, but less than one-thousandth the mass of the Sun.</p>
-          <div class="wiki-container"><p>Source: </p><a class="wiki-link" href="https://en.wikipedia.org/wiki/Jupiter" target="_blank">Wikipedia</a></div>
+      </main>
+  
+      <footer class="m-block-tall">
+        <div class="fact-card border-gray-02">
+          <h4 class="fact-title">rotation time</h4>
+          <h2 class="fact-content">9.93 Hours</h2>
         </div>
-        <div class="component-menu planet-menu">
-          <button class="btn border-gray-02 active">overview</button>
-          <button class="btn border-gray-02">internal structure</button>
-          <button class="btn border-gray-02">surface geology</button>
-          <button class="btn-small border-gray-02 active">overview</button>
-          <button class="btn-small border-gray-02">structure</button>
-          <button class="btn-small border-gray-02">surface</button>
+        <div class="fact-card border-gray-02">
+          <h4 class="fact-title">revolution time</h4>
+          <h2 class="fact-content">11.86 Years</h2>
         </div>
-      </div>
-    </main>
-
-    <footer class="m-block-tall">
-      <div class="fact-card border-gray-02">
-        <h4 class="fact-title">rotation time</h4>
-        <h2 class="fact-content">9.93 Hours</h2>
-      </div>
-      <div class="fact-card border-gray-02">
-        <h4 class="fact-title">revolution time</h4>
-        <h2 class="fact-content">11.86 Years</h2>
-      </div>
-      <div class="fact-card border-gray-02">
-        <h4 class="fact-title">radius</h4>
-        <h2 class="fact-content">69,911 km</h2>
-      </div>
-      <div class="fact-card border-gray-02">
-        <h4 class="fact-title">average temp.</h4>
-        <h2 class="fact-content">-108°c</h2>
-      </div>
-    </footer>
-
+        <div class="fact-card border-gray-02">
+          <h4 class="fact-title">radius</h4>
+          <h2 class="fact-content">69,911 km</h2>
+        </div>
+        <div class="fact-card border-gray-02">
+          <h4 class="fact-title">average temp.</h4>
+          <h2 class="fact-content">-108°c</h2>
+        </div>
+      </footer>
+  
+    </div>
   </div>
 
   <script src="public/js/index.js"></script>
