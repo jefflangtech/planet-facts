@@ -1,12 +1,42 @@
-const menu = document.getElementById('drawer-menu');
-const toggle = document.getElementById(menu.dataset.menuToggle);
+// const menu = document.getElementById('drawer-menu');
+// const toggle = document.getElementById(menu.dataset.menuToggle);
 
-console.dir(menu);
-console.dir(toggle);
+const slidingDrawer = function(
+  contentEl, 
+  triggerEl, 
+  slideFunction, 
+  modifyTriggerFunction) {
 
-toggle.addEventListener('click', (event) => {
+    this.drawer = contentEl;
+    this.trigger = triggerEl;
+    this.drawerSlide = slideFunction;
+    this.toggleTrigger = modifyTriggerFunction;
 
-  event.currentTarget.classList.toggle('opacity-25');
-  menu.classList.toggle('menu-open');
+};
+
+function drawerSlide() {
+
+  this.drawer.classList.toggle('menu-open');
+
+}
+
+function modDrawerTrigger() {
+
+  this.trigger.classList.toggle('opacity-25');
+
+}
+
+const testMenu = new slidingDrawer(
+  document.getElementById('drawer-menu'), 
+  document.getElementById('drawer-menu-toggle'), 
+  drawerSlide, 
+  modDrawerTrigger);
+
+console.dir(testMenu);
+
+testMenu.trigger.addEventListener('click', (event) => {
+
+  testMenu.toggleTrigger();
+  testMenu.drawerSlide();
 
 });
