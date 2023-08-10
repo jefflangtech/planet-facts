@@ -24,9 +24,8 @@ const PubSub = {
 
 };
 
-const SlidingDrawer = function(contentEl, slideFunction) {
+const SlidingDrawer = function(contentEl) {
   this.drawer = contentEl;
-  this.drawerSlide = slideFunction;
 };
 
 const DrawerTrigger = function(triggerEl, modTriggerFn) {
@@ -35,8 +34,7 @@ const DrawerTrigger = function(triggerEl, modTriggerFn) {
 };
 
 const testMenu = new SlidingDrawer(
-  document.getElementById('drawer-menu'),
-  drawerSlide
+  document.getElementById('drawer-menu')
 );
 
 const testTrigger = new DrawerTrigger(
@@ -45,12 +43,15 @@ const testTrigger = new DrawerTrigger(
 );
 
 // Subscribing the drawerSlide method to the event
-// It has to have a bound this because of how it gets called
-PubSub.subscribe('testTriggerClicked', drawerSlide.bind(testMenu));
+// This is a more common way to bind, creating a this context on the fly
+// The only thing is it is wonky with an object, better with an el
+PubSub.subscribe('testTriggerClicked', drawerSlide.bind({ element: testMenu }));
 
 function drawerSlide() {
 
-  this.drawer.classList.toggle('menu-open');
+  // This is too specific to the testMenu object
+  // Would be better if: this.element.classList.toggle();
+  this.element.drawer.classList.toggle('menu-open');
 
 }
 
@@ -63,32 +64,3 @@ function modDrawerTrigger() {
 testTrigger.trigger.addEventListener('click', () => {
   PubSub.publish('testTriggerClicked');
 });
-
-
-// const slidingDrawer = function(
-//   contentEl, 
-//   triggerEl, 
-//   slideFunction, 
-//   modifyTriggerFunction) {
-
-//     this.drawer = contentEl;
-//     this.trigger = triggerEl;
-//     this.drawerSlide = slideFunction;
-//     this.toggleTrigger = modifyTriggerFunction;
-
-// };
-
-// const testMenu = new slidingDrawer(
-//   document.getElementById('drawer-menu'), 
-//   document.getElementById('drawer-menu-toggle'), 
-//   drawerSlide, 
-//   modDrawerTrigger);
-
-// console.dir(testMenu);
-
-// testMenu.trigger.addEventListener('click', (event) => {
-
-//   testMenu.toggleTrigger();
-//   testMenu.drawerSlide();
-
-// });
